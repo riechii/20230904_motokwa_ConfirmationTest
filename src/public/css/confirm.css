@@ -1,0 +1,107 @@
+.confirm {
+    margin: 0 auto;
+    max-width: 1230px;
+    width: 70%;
+}
+.inquiry-form_heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form__group {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__group-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+.form__group-title-item {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.form__group-content {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.form__input--text {
+    width: 100%;
+    text-align: right;
+
+}
+
+.input-name {
+
+    height: 40px;
+    padding-left: 10px;
+    text-align: left;
+    border: none;
+
+
+}
+
+
+
+.form__input {
+    width: 300px;
+    height: 40px;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-textarea {
+    width: 300px;
+    height: 90px;
+    border: none;
+    margin-top: 30px;
+    
+}
+
+.form__button {
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+
+}
+.modifyーbutton {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.modifyーbutton-submit {
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-bottom: solid 1px;
+}

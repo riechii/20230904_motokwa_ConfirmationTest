@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InquiryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//フォーム入力画面
+Route::get('/', [InquiryController::class, 'index']);
+//入力確認ページ
+Route::post('/inquiries/confirm', [InquiryController::class, 'confirm']);
+//問合せ完了ページ
+Route::post('/inquiries', [InquiryController::class, 'store']);
+//管理画面
