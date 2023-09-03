@@ -35,5 +35,14 @@ class InquiryController extends Controller
         return view('thanks');
     }
 
-    
+    //管理画面ページ
+    public function search()
+    {
+        
+        return view('management');
+
+
+    }
+
+
 }

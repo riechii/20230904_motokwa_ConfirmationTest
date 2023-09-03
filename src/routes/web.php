@@ -22,3 +22,4 @@ Route::post('/inquiries/confirm', [InquiryController::class, 'confirm']);
 //問合せ完了ページ
 Route::post('/inquiries', [InquiryController::class, 'store']);
 //管理画面
+Route::get('/management', [InquiryController::class, 'search']);
