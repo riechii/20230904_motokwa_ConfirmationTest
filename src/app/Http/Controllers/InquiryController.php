@@ -46,5 +46,18 @@ class InquiryController extends Controller
 
     }
 
+    //削除
+    public function destroy(Request $request)
+    {
+        Inquiry::find($request->id)->delete();
+        return redirect('/management');
+    }
+    //検索
+    public function seek(Request $request)
+    {
+        $inquiries = Inquiry::with('inquiry')->KeywordSearch($request->keyword)->get();
+
+        return view('management');
+    }
 
 }

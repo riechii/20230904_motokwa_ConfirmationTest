@@ -23,3 +23,6 @@ Route::post('/inquiries/confirm', [InquiryController::class, 'confirm']);
 Route::post('/inquiries', [InquiryController::class, 'store']);
 //管理画面
 Route::get('/management', [InquiryController::class, 'search']);
+//削除
+Route::delete('/management/delete', [InquiryController::class, 'destroy']);
+//検索

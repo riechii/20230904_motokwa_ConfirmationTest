@@ -9,11 +9,9 @@
 }
 .form__button {
     margin-top: 30px;
-
     text-align: center;
-
+    cursor: pointer;
 }
-
 .form__button-submit {
     padding: 10px;
     width: 30%;

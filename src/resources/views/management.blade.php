@@ -13,7 +13,7 @@
             <h2 class="title">管理システム</h2>
         </div>
         <div class="form">
-            <form class="form-search" action="/management" method="get">
+            <form class="form-search" action="/management/seek" method="get">
                 @csrf
                 <div class="search">
                     <div class="search-group">
@@ -38,7 +38,7 @@
                         <button class="form__button-submit" type="submit">検索</button>
                     </div>
                     <div class="resetーbutton">
-                        <button class="resetーbutton-submit" type="submit"name='' value="">リセット</button>
+                        <button class="resetーbutton-submit" type="submit"name='back' value="back">リセット</button>
                     </div>
                 </div>
             </form>
@@ -69,9 +69,14 @@
                     <td>{{$inquiry->email}}</td>
                     <td>{{$inquiry->opinion}}</td>
                     <td>
-                        <div class="delete__button">
-                            <button class="delete__button-submit" type="submit">削除</button>
-                        </div>
+                        <form class="delete-form" action="/management/delete" method="POST">
+                        @method('DELETE')
+                        @csrf
+                            <div class="delete__button">
+                                <input type="hidden" name="id" value="{{ $inquiry['id'] }}">
+                                <button class="delete__button-submit" type="submit">削除</button>
+                            </div>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
