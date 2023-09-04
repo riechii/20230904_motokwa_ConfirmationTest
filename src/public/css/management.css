@@ -110,3 +110,10 @@ table tr:last-child {
 
 }
 
+.pagination li {
+    display: inline-block;
+}
+.viewーpage {
+    display: flex;
+    justify-content: space-between;
+}

@@ -14,10 +14,11 @@
         </div>
         <div class="form">
             <form class="form-search" action="/management" method="get">
+                @csrf
                 <div class="search">
                     <div class="search-group">
                         <p class="search-ttl">お名前</p>
-                        <input class="search-input" type="text">
+                        <input class="search-input" type="text" name="keyword" value="{{ old('keyword') }}">
                         <p class="search-ttl-second">性別</p>
                         <input class="search-radio" type="radio" name="gender" value="全て" checked>全て
                         <input class="search-radio" type="radio" name="gender" value="男性">男性
@@ -31,7 +32,7 @@
                     </div>
                     <div class="search-group">
                         <p class="search-ttl-second">メールアドレス</p>
-                        <input class="search-input" type="text">
+                        <input class="search-input" type="text" name="email" value="{{ old('email') }}">
                     </div>
                     <div class="form__button">
                         <button class="form__button-submit" type="submit">検索</button>
@@ -51,20 +52,29 @@
                     <th>メールアドレス</th>
                     <th>ご意見</th>
                 </tr>
-              
+                <div class="viewーpage">
+                @if (count($inquiries) >0)
+                <p>全{{ $inquiries->total() }}件中
+                    {{  ($inquiries->currentPage() -1) * $inquiries->perPage() + 1}} - {{ (($inquiries->currentPage() -1) * $inquiries->perPage() + 1) + (count($inquiries) -1)  }}件</p>
+                @else
+                <p>データがありません。</p>
+                @endif
+                {{ $inquiries->links() }}
+                </div>
+                @foreach ($inquiries as $inquiry)
                 <tr>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
+                    <td>{{$inquiry->id}}</td>
+                    <td>{{$inquiry->fullname}}</td>
+                    <td>{{$inquiry->gender}}</td>
+                    <td>{{$inquiry->email}}</td>
+                    <td>{{$inquiry->opinion}}</td>
                     <td>
                         <div class="delete__button">
                             <button class="delete__button-submit" type="submit">削除</button>
                         </div>
                     </td>
                 </tr>
-                
+                @endforeach
             </table>
         </div>
     </div>

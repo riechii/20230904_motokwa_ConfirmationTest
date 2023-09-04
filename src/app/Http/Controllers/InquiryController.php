@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\InquiryRequest;
 use App\Models\Inquiry;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class InquiryController extends Controller
 {
@@ -38,8 +40,8 @@ class InquiryController extends Controller
     //管理画面ページ
     public function search()
     {
-        
-        return view('management');
+        $inquiries = Inquiry::Paginate(5);
+        return view('management', ['inquiries' => $inquiries]);
 
 
     }
